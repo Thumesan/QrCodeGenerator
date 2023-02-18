@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="title">
+        <h3>Details</h3>
+      </div>
+      <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-tabs">
+        <li [ngbNavItem]="'url'">
+          <a ngbNavLink>URL</a>
+          <ng-template ngbNavContent>
+            <app-url></app-url>
+          </ng-template>
+        </li>
+        <li ngbDropdown class="nav-item">
+          <a href (click)="false" class="nav-link" ngbDropdownToggle>Socials</a>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem>Facebook</button>
+            <button ngbDropdownItem>Instagram</button>
+            <button ngbDropdownItem>Tiktok</button>
+            <button ngbDropdownItem>Whatsapp</button>
+          </div>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+    <div class="col-md-4">
+      <div class="title d-flex justify-content-center">
+        <h3>Preview</h3>
+      </div>
+    </div>
+  </div>
+</div>
